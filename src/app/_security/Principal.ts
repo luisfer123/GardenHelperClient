@@ -12,8 +12,15 @@ export class Principal {
         principal.id = data.id;
         principal.username = data.username;
         principal.email = data.email;
-        principal.roles = data.roles;
+        // principal.roles = data.roles;
 
+        let roles = new Array<Role>();
+        for(let role of data.roles) {
+            let tempRole: Role = <Role> role;
+            roles.push(tempRole);
+        }
+
+        principal.roles = roles;
         return principal;
     }
 }

@@ -9,26 +9,9 @@ import { AuthService } from '../_security/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  username: string = '';
-  password: string = '';
-
-  constructor(
-    private authService: AuthService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  onSubmit() {
-    this.authService.login(this.username, this.password)
-      .subscribe({
-        next: data => {
-          const url = this.activatedRoute.snapshot.queryParams['requestedUrl'];
-          this.router.navigateByUrl(url);
-        }
-      });
   }
 
 }
