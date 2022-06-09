@@ -8,13 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { UsersComponent } from './users/users.component';
-import { EditUserComponent } from './users/edit-user/edit-user.component';
-import { UserDetailComponent } from './users/user-detail/user-detail.component';
-import { RegisterUserComponent } from './register-user/register-user.component';
-import { UserComponent } from './user/user.component';
-import { UserProfileComponent } from './user/user-profile/user-profile.component'
+import { RegisterUserComponent } from './user-components/register-user/register-user.component';
 import { AuthErrorInterceptor } from './_security/auth.error.interceptor';
+import { UserProfileComponent } from './user-components/user-profile/user-profile.component';
+import { EditUserComponent } from './user-components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +19,9 @@ import { AuthErrorInterceptor } from './_security/auth.error.interceptor';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    UsersComponent,
-    EditUserComponent,
-    UserDetailComponent,
     RegisterUserComponent,
-    UserComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

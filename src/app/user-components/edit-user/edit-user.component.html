@@ -1,0 +1,116 @@
+<section style="background-color: #eee;">
+    <div class="container pt-5">
+        <div class="card mb-4">
+            <div class="card-body text-center">
+                <h3 class="h3">Editar perfil</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                            alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">{{user?.username}}</h5>
+                        <p class="text-muted mb-1">Full Stack Developer</p>
+                        <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <button type="button" class="btn btn-primary">Follow</button>
+                            <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4 mb-lg-0">
+                    <div class="card-body p-0">
+                        <ul class="list-group list-group-flush rounded-3">
+                            <li class="list-group-item d-flex justify-content-center align-content-center p-3">
+                                <a [routerLink]="['/profile']" class="text-decoration-none">Volver a mi perfil</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="h5 mt-3 mb-5 text-center">Editar informaci&oacute;n personal</h5>
+                        <form [formGroup]='personalInfForm'>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="firstNameInput" class="form-label">Nombre</label>
+                                        <input formControlName="firstName" type="text" class="form-control" id="firstNameInput">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="middleNameInput" class="form-label">Segundo Nombre</label>
+                                        <input formControlName="middleName" type="text" class="form-control" id="middleNameInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="lastNameInput" class="form-label">Apellido Paterno</label>
+                                        <input formControlName="lastName" type="text" class="form-control" id="lastNameInput">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="secondLastNameInput" class="form-label">Apellido Materno</label>
+                                        <input formControlName="secondLastName" type="text" class="form-control" id="secondLastNameInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <button (click)="onSubmitPersonaInfoForm()" class="btn btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="h5 mt-2 mb-4 text-center">Editar contrace&ntilde;a</h5>
+                                <form [formGroup]="changePasswordFrom">
+                                    <div class="mb-3">
+                                        <label for="currentPassword" class="form-label">Contrace&ntilde;a actual</label>
+                                        <input formControlName="currentPassword" type="password" class="form-control" id="currentPassword" aria-describedby="currentPasswordHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">Nueva contrace&ntilde;a</label>
+                                        <input formControlName="newPassword" type="password" class="form-control" id="newPassword">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="repeatNewPassword" class="form-label">Repite nueva contrace&ntilde;a</label>
+                                        <input formControlName="repeatNewPassword" type="password" class="form-control" id="repeatNewPassword" aria-describedby="repeatNewPasswordHelp">
+                                        <div id="repeatNewPasswordHelp" class="form-text">Las contrace&ntilde;as deben coincidir</div>
+                                    </div>
+                                    <button (click)="onSubmitChangePasswordForm()" class="btn btn-primary">Guardar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="h5 mt-2 text-center">Editar informaci&oacute;n de usuario</h5>
+                                <form [formGroup]="userInfoForm">
+                                    <div class="mb-3 mt-3">
+                                        <label for="username" class="form-label">Nombre de usuario</label>
+                                        <input formControlName="username" type="text" class="form-control" id="username">
+                                    </div>
+                                    <div class="mb-3 mt-5">
+                                        <label for="email" class="form-label">Correo electr&oacute;nico</label>
+                                        <input formControlName="email" type="email" class="form-control" id="email" >
+                                    </div>
+                                    <button (click)="onSubmitUserinfoForm()" class="btn btn-primary mt-5 mb-3">Guardar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -19,12 +19,12 @@ export class AuthService {
     private router: Router
   ) {
     const storedPrincipalStr = localStorage.getItem('principal');
-    if(storedPrincipalStr) {
+    if(storedPrincipalStr == null) {
+      this.principalSubject = new BehaviorSubject<Principal | null>(null);
+    } else {
       const principal: Principal = 
         Principal.fromData(JSON.parse(storedPrincipalStr));
       this.principalSubject = new BehaviorSubject<Principal | null>(principal);
-    } else {
-      this.principalSubject = new BehaviorSubject<Principal | null>(null);
     }
 
     this.principal = this.principalSubject.asObservable();
