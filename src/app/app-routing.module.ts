@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UserProfileComponent } from './user-components/user-profile/user-profile.component';
 import { EditUserComponent } from './user-components/edit-user/edit-user.component';
+import { UserBonsaiListComponent } from './plant-components/user-bonsai-list/user-bonsai-list.component';
+import { BonsaiDetailComponent } from './plant-components/user-bonsai-list/bonsai-detail/bonsai-detail.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,17 @@ const routes: Routes = [
   {
     path: 'edit-profile',
     component: EditUserComponent
+  },
+
+  {
+    path: 'my-bonsais',
+    component: UserBonsaiListComponent,
+    children: [
+      {
+        path: 'bonsai-detail',
+        component: BonsaiDetailComponent
+      }
+    ]
   }
 ];
 

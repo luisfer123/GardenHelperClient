@@ -12,6 +12,9 @@ import { RegisterUserComponent } from './user-components/register-user/register-
 import { AuthErrorInterceptor } from './_security/auth.error.interceptor';
 import { UserProfileComponent } from './user-components/user-profile/user-profile.component';
 import { EditUserComponent } from './user-components/edit-user/edit-user.component';
+import { BonsaiDetailComponent } from './plant-components/user-bonsai-list/bonsai-detail/bonsai-detail.component';
+import { RouterModule } from '@angular/router';
+import { UserBonsaiListComponent } from './plant-components/user-bonsai-list/user-bonsai-list.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +24,17 @@ import { EditUserComponent } from './user-components/edit-user/edit-user.compone
     NavbarComponent,
     RegisterUserComponent,
     UserProfileComponent,
-    EditUserComponent
+    EditUserComponent,
+    BonsaiDetailComponent,
+    UserBonsaiListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthErrorInterceptor, multi: true}

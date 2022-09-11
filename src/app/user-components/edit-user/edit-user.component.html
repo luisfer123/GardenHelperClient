@@ -99,12 +99,14 @@
                                     <div class="mb-3 mt-3">
                                         <label for="username" class="form-label">Nombre de usuario</label>
                                         <input formControlName="username" type="text" class="form-control" id="username">
+                                        <span *ngIf="!userInfoForm.get('username')?.valid && userInfoForm.get('username')?.touched" class="help-block">Nombre de usuario no v&aacute;lido</span>
                                     </div>
                                     <div class="mb-3 mt-5">
                                         <label for="email" class="form-label">Correo electr&oacute;nico</label>
                                         <input formControlName="email" type="email" class="form-control" id="email" >
+                                        <span *ngIf="!userInfoForm.get('email')?.valid && userInfoForm.get('email')?.touched" class="help-block">Correo electr&oacute;nico no v&aacute;lido</span>
                                     </div>
-                                    <button (click)="onSubmitUserinfoForm()" class="btn btn-primary mt-5 mb-3">Guardar</button>
+                                    <button (click)="onSubmitUserinfoForm()" class="btn btn-primary mt-5 mb-3" [disabled]="!userInfoForm.valid">Guardar</button>
                                 </form>
                             </div>
                         </div>

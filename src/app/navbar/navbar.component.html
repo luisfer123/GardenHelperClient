@@ -23,6 +23,12 @@
         <li *ngIf="isAuthenticated()" class="nav-item">
           <a [routerLink]="['/profile']" class="nav-link">Mi Perfil</a>
         </li>
+        <li *ngIf="isAuthenticated()" class="nav-item">
+          <a [routerLink]="['/my-bonsais']" class="nav-link">Mis bonsais</a>
+        </li>
+        <li *ngIf="isAuthenticated()" class="nav-item">
+          <a [routerLink]="['/my-plants/garden-plants']" class="nav-link">Mi jardín</a>
+        </li>
       </ul>
       <ul class="navbar-nav ms-auto">
         <li *ngIf="isAuthenticated()" class="nav-item">

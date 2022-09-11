@@ -1,0 +1,41 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="{{bonsai?.thumbnailImage}}"
+                            alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">{{bonsai?.name}}</h5>
+                        <p class="text-muted mb-1">Full Stack Developer</p>
+                        <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <button type="button" class="btn btn-primary">Follow</button>
+                            <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4 mb-lg-0">
+                    <div class="card-body p-0">
+                        <ul class="list-group list-group-flush rounded-3">
+                            <li class="list-group-item d-flex justify-content-center align-content-center p-3">
+                                <a [routerLink]="['/profile']" class="text-decoration-none">Volver a mi perfil</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="h5 mt-3 mb-5 text-center">Editar informaci&oacute;n personal</h5>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
